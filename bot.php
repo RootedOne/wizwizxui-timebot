@@ -4909,4 +4909,4 @@ if(preg_match('/^sendTicket_(.*)/',$userInfo['step'],$match)  and $text!=$button
 }
 if($data== "usersOpenTickets" || $data == "userAllTickets"){
     if($data== "usersOpenTickets"){
-        $stmt = $connection->prepare("SELECT * FROM `chats` WHERE `state` != 2 AND `user_id` = ? ORDER
+        $stmt = $connection->prepare("SELECT * FROM `chats` WHERE `state` != 2 AND `user_id` = ? ORDER BY `state` ASC, `create_date` DESC");
